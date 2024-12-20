@@ -1,4 +1,4 @@
 require("config.init")
-require("config.lazy")
-require("config.lsp_config")
-require("config.telescope")
+require("config.keymaps")
+require("config.options")
+require("config.autocmds")
