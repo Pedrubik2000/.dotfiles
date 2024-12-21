@@ -5,7 +5,7 @@ vim.cmd("colorscheme dracula")
 vim.opt.guicursor = ""
 
 -- Rules
-vim.opt.nu =true
+vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- Indent
@@ -37,3 +37,5 @@ vim.opt.colorcolumn = "80"
 
 -- Map leader
 vim.g.mapleader = " "
+
+vim.o.splitright = true
