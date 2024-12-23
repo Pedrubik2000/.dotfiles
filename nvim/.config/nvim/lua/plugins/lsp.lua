@@ -17,15 +17,29 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      lspconfig.ts_ls.setup {
-        capabilities = capabilities
+      lspconfig.eslint.setup {
+        settings = {
+          useFlatConfig = true,
+          experimental = {
+            useFlatConfig = nil
+          }
+        }
       }
+
+      lspconfig.ts_ls.setup {}
       lspconfig.lua_ls.setup {
-        capabilities = capabilities
       }
       lspconfig.html.setup {
-        capabilities = capabilities
+        capabilities = capabilities,
       }
+      lspconfig.css_variables.setup {
+      }
+      lspconfig.cssls.setup {
+        capabilities = capabilities,
+      }
+      lspconfig.cssmodules_ls.setup {
+      }
+
 
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
