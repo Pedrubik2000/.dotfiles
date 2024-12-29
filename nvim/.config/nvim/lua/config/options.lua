@@ -39,3 +39,8 @@ vim.g.mapleader = " "
 vim.o.splitright = true
 
 vim.diagnostic.config({ virtual_text = { source = true } })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '',
+  command = 'set fo-=r fo-=o'
+})

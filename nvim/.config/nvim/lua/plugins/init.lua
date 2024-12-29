@@ -7,7 +7,13 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  { "Mofiqul/dracula.nvim" },
+  {
+    "Mofiqul/dracula.nvim",
+    config = function()
+      local dracula = require('dracula')
+      dracula.setup({ transparent_bg = true })
+    end
+  },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }

@@ -39,6 +39,7 @@ return {
       }
       lspconfig.cssmodules_ls.setup {
       }
+      lspconfig.basedpyright.setup {}
 
 
       vim.api.nvim_create_autocmd('LspAttach', {
