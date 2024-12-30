@@ -1,12 +1,13 @@
 return {
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
   {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {
     "Mofiqul/dracula.nvim",
     config = function()
@@ -15,17 +16,8 @@ return {
     end
   },
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
-  },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  },
-  "mhartington/formatter.nvim",
-  {
     'barrett-ruth/live-server.nvim',
-    build = 'pnpm add -g live-server',
+    build = 'npm add -g live-server',
     cmd = { 'LiveServerStart', 'LiveServerStop' },
     config = true
   }
