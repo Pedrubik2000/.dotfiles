@@ -10,10 +10,9 @@ return {
   },
   {
     "Mofiqul/dracula.nvim",
-    config = function()
-      local dracula = require('dracula')
-      dracula.setup({ transparent_bg = true })
-    end
+    opts = {
+      transparent_bg = true
+    }
   },
   {
     'barrett-ruth/live-server.nvim',

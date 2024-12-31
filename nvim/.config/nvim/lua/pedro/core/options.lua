@@ -1,9 +1,6 @@
 -- Colors
 vim.cmd("colorscheme dracula")
 
--- Cursor
-vim.opt.guicursor = ""
-
 -- Rules
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -30,9 +27,6 @@ vim.opt.scrolloff = 8
 
 -- Updatetime
 vim.opt.updatetime = 50
-
--- Color Column
-vim.opt.colorcolumn = "80"
 
 -- Map leader
 vim.g.mapleader = " "

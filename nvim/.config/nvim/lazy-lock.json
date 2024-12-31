@@ -1,7 +1,18 @@
 {
+  "blink-cmp-rg.nvim": { "branch": "main", "commit": "722d8ab5d29369d604133064816657203cf24540" },
+  "blink-emoji.nvim": { "branch": "master", "commit": "699493775b61b94ead76841c981a51d3df350ea0" },
+  "blink.cmp": { "branch": "main", "commit": "5f442681df24fe705d1ee7ce5b4d435aa4b4dee4" },
   "dracula.nvim": { "branch": "main", "commit": "515acae4fd294fcefa5b15237a333c2606e958d1" },
+  "floating-input.nvim": { "branch": "main", "commit": "0c3393891cbf07745fa3997d45aac5461b0d892f" },
+  "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
+  "lazydev.nvim": { "branch": "main", "commit": "8620f82ee3f59ff2187647167b6b47387a13a018" },
   "live-server.nvim": { "branch": "main", "commit": "5fc8abb727827a09d0ce1b7757d0a4c7b5802b09" },
+  "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
+  "mini.clue": { "branch": "main", "commit": "983a6c2e6231e94016343ea58921001ab2b74183" },
   "mini.icons": { "branch": "main", "commit": "6787321f70d674a481776b7cc2c781fb7002c644" },
+  "mini.pick": { "branch": "main", "commit": "eb8fad053935dd6e4861c7b65b0d3f70785d8f42" },
+  "nvim-notify": { "branch": "master", "commit": "c3797193536711b5d8983975791c4b11dc35ab3a" },
+  "nvim-web-devicons": { "branch": "master", "commit": "4adeeaa7a32d46cf3b5833341358c797304f950a" },
   "oil.nvim": { "branch": "master", "commit": "ba858b662599eab8ef1cba9ab745afded99cb180" }
 }

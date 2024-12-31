@@ -18,10 +18,21 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    { import = "plugins" },
+    { import = "pedro.plugins" },
+--    { import = "pedro.plugins.lsp"}
   },
-  checker = { enabled = true },
+  checker = { 
+    enabled = true,
+--    notify = false,
+  },
+  ui = {
+    border = "rounded",
+  },
+  change_detection = {
+--    notify = false,
+  }
 })
