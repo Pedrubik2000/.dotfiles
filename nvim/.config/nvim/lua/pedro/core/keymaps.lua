@@ -27,3 +27,6 @@ vim.keymap.set("i", "`", "``<kLeft>")
 vim.keymap.set('n', '<leader>pf', ':Pick files<CR>', { desc = 'Pick files' })
 vim.keymap.set('n', '<leader>pg', ':Pick grep_live<CR>', { desc = 'Pick live grep' })
 vim.keymap.set('n', '<leader>ph', ':Pick help<CR>', { desc = 'Pick help' })
+
+vim.keymap.set({'n','v'}, '<leader>sa', ':ScissorsAddNewSnippet<CR>', { desc = 'Add new snippet' })
+vim.keymap.set('n', '<leader>se', ':ScissorsEditSnippet<CR><Esc>', { desc = 'Edit snippets' })

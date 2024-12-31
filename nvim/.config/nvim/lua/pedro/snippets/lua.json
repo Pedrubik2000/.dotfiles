@@ -1,0 +1,1 @@
+{"nvim_set_hl(none)":{"body":"vim.api.nvim_set_hl(0,'${1:name}',{guibg=none})","prefix":"nvim_set_hl(none)"},"vim_keymap_set":{"prefix":"vim_keymap_set","body":"vim.keymap.set('${1:mode}', '${2:lhs}', '${3:rhs}', { desc = '$0' })"}}

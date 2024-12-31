@@ -1,5 +1,8 @@
 -- Colors
 vim.cmd("colorscheme dracula")
+vim.api.nvim_set_hl(0,'NormalFloat',{guibg=none})
+vim.api.nvim_set_hl(0,'PMenu',{guibg=none})
+vim.api.nvim_set_hl(0,'TelescopeNormal',{guibg=none})
 
 -- Rules
 vim.opt.nu = true

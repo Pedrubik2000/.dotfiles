@@ -5,7 +5,10 @@ return {
     'niuiic/blink-cmp-rg.nvim',
           "moyiz/blink-emoji.nvim",
   },
-  event = 'InsertEnter',
+  event = {
+    'InsertEnter',
+'CmdlineEnter'
+  },
   version = '*', 
   opts = {
     keymap = { preset = 'default' },
@@ -16,6 +19,13 @@ return {
     sources = {
       default = { 'lazydev','lsp', 'path', 'snippets', 'buffer', "ripgrep", "emoji"},
       providers = {
+        snippets = {
+          opts = {
+            search_paths = {
+              "../snippets/"
+            }
+          }
+        },
         lazydev = {
           name = "LazyDev",
           module = "lazydev.integrations.blink",
