@@ -1,7 +1,7 @@
 return {
-  dir = "~/project-euler/", -- Your path
+  "Pedrubik2000/project-euler", -- Your path
   name = "project-euler",
   config = function ()
-    require('project-euler')
+    require('project-euler').setup()
   end
 }
