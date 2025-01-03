@@ -22,17 +22,29 @@ plugins=(
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-if ! command -v cargo &> /dev/null; then
+if command -v cargo &> /dev/null; then
     export CARGO_HOME="$HOME/.cargo"
     export PATH="$PATH:$CARGO_HOME/bin"
 fi
 
-if command -v nvim &> /dev/null; then
+updateneovim () {
+    if [[ ! -z "$PREFIX" ]]; then
+	pkg install neovim
+    else
 	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-	sudo rm -rf /opt/nvim
-	sudo tar -C /opt -xzf nvim-linux64.tar.gz
+        sudo rm -rfv /opt/nvim
+        sudo tar -C /opt -xzf nvim-linux64.tar.gz
+	rm -v nvim-linux64.tar.gz
+    fi
+}
+
+if ! command -v nvim &> /dev/null; then
+    updateneovim
 fi
-export PATH="$PATH:/opt/nvim-linux64/bin"
+
+if [[ -z "$PREFIX" ]]; then
+	export PATH="$PATH:/opt/nvim-linux64/bin"
+fi
 
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
@@ -52,3 +64,4 @@ mkdircp ()
     mkdir $1
     cp -rv $2 $1$2
 }
+
