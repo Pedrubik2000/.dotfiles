@@ -6,6 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export NVIM="$XDG_CONFIG_HOME/nvim"
+
+if ! test -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k; then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 plugins=(
     git
     rust
@@ -14,19 +22,21 @@ plugins=(
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-if [[ "$(which cargo)" = "/usr/bin/cargo" ]]; then
+if ! command -v cargo &> /dev/null; then
     export CARGO_HOME="$HOME/.cargo"
     export PATH="$PATH:$CARGO_HOME/bin"
 fi
 
+if command -v nvim &> /dev/null; then
+	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+	sudo rm -rf /opt/nvim
+	sudo tar -C /opt -xzf nvim-linux64.tar.gz
+fi
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
-export NVIM="$XDG_CONFIG_HOME/nvim"
-if [[ ! -d "$HOME/powerlevel10k/" ]] then
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-fi
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -35,4 +45,10 @@ gitAddCommitPush ()
   git add .
   git commit -m $1
   git push
+}
+
+mkdircp ()
+{
+    mkdir $1
+    cp -rv $2 $1$2
 }
