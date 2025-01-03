@@ -67,7 +67,7 @@ return {
       completion = {
          menu = {
             border = "rounded",
-            auto_show = function(ctx)
+            auto_show = function()
                local cmdtype = vim.fn.getcmdtype()
                local cmdline = vim.fn.getcmdline()
                return not (cmdtype == ":" and cmdline:match("^l"))
