@@ -1,30 +1,30 @@
 return {
-   'saghen/blink.cmp',
+   "saghen/blink.cmp",
    dependencies = {
-      'rafamadriz/friendly-snippets',
-      'niuiic/blink-cmp-rg.nvim',
+      "rafamadriz/friendly-snippets",
+      "niuiic/blink-cmp-rg.nvim",
       "moyiz/blink-emoji.nvim",
    },
    event = {
-      'InsertEnter',
-      'CmdlineEnter'
+      "InsertEnter",
+      "CmdlineEnter",
    },
-   version = '*',
+   version = "*",
    opts = {
-      keymap = { preset = 'default' },
+      keymap = { preset = "default" },
       appearance = {
          use_nvim_cmp_as_default = true,
-         nerd_font_variant = 'mono'
+         nerd_font_variant = "mono",
       },
       sources = {
-         default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', "ripgrep", "emoji" },
+         default = { "lazydev", "lsp", "path", "snippets", "buffer", "ripgrep", "emoji" },
          providers = {
             snippets = {
                opts = {
                   search_paths = {
-                     "../snippets/"
-                  }
-               }
+                     "../snippets/",
+                  },
+               },
             },
             lazydev = {
                name = "LazyDev",
@@ -61,46 +61,46 @@ return {
                module = "blink-emoji",
                name = "Emoji",
                score_offset = 15,
-            }
-         }
+            },
+         },
       },
       completion = {
          menu = {
-            border = 'rounded',
+            border = "rounded",
             auto_show = function(ctx)
                local cmdtype = vim.fn.getcmdtype()
                local cmdline = vim.fn.getcmdline()
-               return not (cmdtype == ':' and cmdline:match("^l"))
+               return not (cmdtype == ":" and cmdline:match("^l"))
             end,
             draw = {
                components = {
                   kind_icon = {
                      ellipsis = false,
                      text = function(ctx)
-                        local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
+                        local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
                         return kind_icon
                      end,
                      -- Optionally, you may also use the highlights from mini.icons
                      highlight = function(ctx)
-                        local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                        local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                         return hl
                      end,
-                  }
-               }
+                  },
+               },
             },
          },
          documentation = {
             window = {
-               border = 'rounded',
+               border = "rounded",
             },
          },
       },
       signature = {
          enabled = true,
          window = {
-            border = 'rounded',
+            border = "rounded",
          },
       },
    },
-   opts_extend = { "sources.default" }
+   opts_extend = { "sources.default" },
 }

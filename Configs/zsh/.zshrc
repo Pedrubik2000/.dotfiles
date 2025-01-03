@@ -23,6 +23,16 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
 export NVIM="$XDG_CONFIG_HOME/nvim"
+if [[ ! -d "$HOME/powerlevel10k/" ]] then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+fi
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+gitAddCommitPush ()
+{
+  git add .
+  git commit -m $1
+  git push
+}

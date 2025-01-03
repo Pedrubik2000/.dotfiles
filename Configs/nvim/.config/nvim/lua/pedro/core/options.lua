@@ -1,8 +1,15 @@
 -- Colors
 vim.cmd("colorscheme dracula")
-vim.api.nvim_set_hl(0,'NormalFloat',{guibg=none})
-vim.api.nvim_set_hl(0,'PMenu',{guibg=none})
-vim.api.nvim_set_hl(0,'TelescopeNormal',{guibg=none})
+vim.api.nvim_set_hl(0, "NormalFloat", { guibg = none })
+vim.api.nvim_set_hl(0, "PMenu", { guibg = none })
+vim.api.nvim_set_hl(0, "TelescopeNormal", { guibg = none })
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+   border = "rounded",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+   border = "rounded",
+})
 
 -- Rules
 vim.opt.nu = true
@@ -20,6 +27,7 @@ vim.opt.wrap = false
 
 -- Search
 vim.opt.hlsearch = false
+
 vim.opt.incsearch = true
 
 -- Terminal gui colors
@@ -37,7 +45,7 @@ vim.o.splitright = true
 
 vim.diagnostic.config({ virtual_text = { source = true } })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = '',
-  command = 'set fo-=r fo-=o'
+vim.api.nvim_create_autocmd("BufEnter", {
+   pattern = "",
+   command = "set fo-=r fo-=o",
 })
