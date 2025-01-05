@@ -31,20 +31,20 @@ updateneovim () {
     if [[ ! -z "$PREFIX" ]]; then
 	pkg install neovim
     else
-	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+    curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
         sudo rm -rfv /opt/nvim
         sudo tar -C /opt -xzf nvim-linux64.tar.gz
 	rm -v nvim-linux64.tar.gz
     fi
 }
+if [[ -z "$PREFIX" ]]; then
+	export PATH="$PATH:/opt/nvim-linux64/bin"
+fi
 
 if ! command -v nvim &> /dev/null; then
     updateneovim
 fi
 
-if [[ -z "$PREFIX" ]]; then
-	export PATH="$PATH:/opt/nvim-linux64/bin"
-fi
 
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999

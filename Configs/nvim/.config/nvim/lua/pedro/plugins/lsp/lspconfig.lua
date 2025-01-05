@@ -2,7 +2,8 @@ return {
    "neovim/nvim-lspconfig",
    event = { "BufReadPre", "BufNewFile" },
    config = function()
-      require("lspconfig").lua_ls.setup({
+      local lspconfig = require("lspconfig")
+      lspconfig.lua_ls.setup({
          on_init = function(client)
             if client.workspace_folders then
                local path = client.workspace_folders[1].name
@@ -34,5 +35,6 @@ return {
             Lua = {},
          },
       })
+      lspconfig.bashls.setup({})
    end,
 }

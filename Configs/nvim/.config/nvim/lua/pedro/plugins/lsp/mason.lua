@@ -9,12 +9,16 @@ return {
       require("mason-lspconfig").setup({
          ensure_installed = {
             "lua_ls",
+            "bashls",
          },
       })
       require("mason-tool-installer").setup({
          ensure_installed = {
             "stylua",
             "luacheck",
+            "shellcheck",
+            "shellharden",
+            "shfmt",
          },
       })
    end,
