@@ -53,7 +53,12 @@ mkdirtouch() {
     mkdir -p "$1"
     touch "$1$2"
 }
+gitIgnoreAdd() {
+    echo "$1" >>.gitignore
+}
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+export BW_SESSION="ix/6ydypsmW72M9LuDob2fsRu8snfK1ONqva46R52Swoa6xlXDTGBIhmKcRp2OAt4LUM1MeQICdXiyN/yp+rqw=="

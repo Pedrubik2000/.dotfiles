@@ -36,5 +36,7 @@ return {
          },
       })
       lspconfig.bashls.setup({})
+      lspconfig.biome.setup({})
+      lspconfig.ts_ls.setup({})
    end,
 }

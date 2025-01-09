@@ -11,6 +11,7 @@ return {
       require("lint").linters_by_ft = {
          lua = { "luacheck" },
          bash = { "bash", "shellcheck" },
+         javascript = { "biomejs" },
       }
       vim.api.nvim_create_autocmd({ "BufWritePost" }, {
          callback = function()

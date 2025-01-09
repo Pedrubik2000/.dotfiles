@@ -30,3 +30,7 @@ vim.keymap.set("n", "<leader>th", ":Telescope help_tags<CR>", { desc = "Pick hel
 
 vim.keymap.set({ "n", "v" }, "<leader>sa", ":ScissorsAddNewSnippet<CR>", { desc = "Add new snippet" })
 vim.keymap.set("n", "<leader>se", ":ScissorsEditSnippet<CR><Esc>", { desc = "Edit snippets" })
+
+vim.lsp.buf.hover({
+   border = "rounded",
+})

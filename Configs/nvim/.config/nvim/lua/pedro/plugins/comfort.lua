@@ -19,6 +19,7 @@ return {
       formatters_by_ft = {
          lua = { "stylua" },
          bash = { "shellharden", "shfmt" },
+         javascript = { "biome" },
       },
       default_format_opts = {
          lsp_format = "fallback",
