@@ -20,6 +20,7 @@ return {
             "shellcheck",
             "shellharden",
             "shfmt",
+            "fixjson",
          },
       })
    end,

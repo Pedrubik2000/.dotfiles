@@ -17,12 +17,12 @@ return {
          nerd_font_variant = "mono",
       },
       sources = {
-         default = { "lazydev", "lsp", "path", "snippets", "buffer", "ripgrep", "emoji" },
+         default = { "snippets", "lazydev", "lsp", "path", "buffer", "ripgrep", "emoji" },
          providers = {
             snippets = {
                opts = {
                   search_paths = {
-                     "../snippets/",
+                     "~/.dotfiles/Configs/snippets/snippets/",
                   },
                },
             },

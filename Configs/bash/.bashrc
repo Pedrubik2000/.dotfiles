@@ -45,16 +45,12 @@ gitAddCommitPush() {
     git push
 }
 
-mkdircp() {
-    mkdir -p "$1"
-    cp -rv "$2" "$1$2"
-}
-mkdirtouch() {
-    mkdir -p "$1"
-    touch "$1$2"
-}
 gitIgnoreAdd() {
     echo "$1" >>.gitignore
+}
+
+cdnvim() {
+    cd "$NVIM" || exit
 }
 
 export NVM_DIR="$HOME/.config/nvm"
@@ -62,3 +58,9 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export BW_SESSION="ix/6ydypsmW72M9LuDob2fsRu8snfK1ONqva46R52Swoa6xlXDTGBIhmKcRp2OAt4LUM1MeQICdXiyN/yp+rqw=="
+
+export EDITOR=/opt/nvim-linux64/bin/nvim
+
+export PATH="$PATH:/home/pedro/.local/share/gem/ruby/3.3.0/bin:/usr/lib/ruby/gems/3.3.0/bin"
+
+source "$(dirname "$(gem which colorls)")"/tab_complete.sh

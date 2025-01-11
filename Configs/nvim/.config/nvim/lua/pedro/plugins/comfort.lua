@@ -20,6 +20,7 @@ return {
          lua = { "stylua" },
          bash = { "shellharden", "shfmt" },
          javascript = { "biome" },
+         json = { "fixjson" },
       },
       default_format_opts = {
          lsp_format = "fallback",

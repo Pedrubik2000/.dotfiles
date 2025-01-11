@@ -1,0 +1,1 @@
+{"confirm":{"body":["if confirm \"${1:question}\"; then","    echo \"Executing: ${2:command}\"","    ${2:command}","else","    echo \"Skip ...\"","fi"],"prefix":"confirm"}}
